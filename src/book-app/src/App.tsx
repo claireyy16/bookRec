@@ -1,37 +1,31 @@
 import { useState } from "react";
-import { searchBooks, recommendBooks } from "./api";
-import { type Book } from "./types/bookType";
-
+import { searchBooks } from "./api";
+import type { Book } from "./types/bookType";
+import SearchPage from "./components/SearchPage";
+import ResultsPage from "./components/ResultsPage";
 
 function App() {
-  const [query, setQuery] = useState("");
   const [results, setResults] = useState<Book[]>([]);
+  const [view, setView] = useState<"home" | "results">("home");
 
-  const handleSearch = async () => {
+  const handleSearch = async (query: string) => {
     const data = await searchBooks(query);
     setResults(data);
+    setView("results");
+  };
+
+  const handleReset = () => {
+    setResults([]);
+    setView("home");
   };
 
   return (
     <div style={{ padding: "1rem" }}>
-      <h1>Book Search</h1>
-      <input
-        value={query}
-        onChange={e => setQuery(e.target.value)}
-        placeholder="Search books..."
-      />
-      <button onClick={handleSearch}>Search</button>
-
-      <ul>
-        {results.map((book, i) => (
-          <li key={i}>
-            <strong>{book.title}</strong> — {book.ratings} ratings <br />
-            <a href={book.url} target="_blank">Goodreads</a>
-            <br />
-            <img src={book.cover_image} alt={book.title} width={50} />
-          </li>
-        ))}
-      </ul>
+      {view === "home" ? (
+        <SearchPage onSearch={handleSearch} />
+      ) : (
+        <ResultsPage results={results} onReset={handleReset} />
+      )}
     </div>
   );
 }
