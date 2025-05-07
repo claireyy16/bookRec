@@ -1,10 +1,12 @@
-> Book recommendation search engine based off UCSD datasets from goodreads (goodreads API has since been retired, these datasets are a couple years old)
+Book recommendation search engine based off UCSD datasets from goodreads, using Python scripts in Jupyter Notebook, pandas, numpy, scikit-learn, vectorizers, etc.
 
-> Users can use this search engine to look for a book's information using the search engine, or input a list of books that they like and find tailored recommendations from other users with similar taste. 
+> Note: goodreads API has since been retired, these datasets are a couple years old
 
-> The script reads in data from the datasets and normalizes the data so the search engine is more efficient. 
+Users can use this search engine to look for a book's information using the search engine, or input a list of books that they like and find tailored recommendations from other users with similar taste. 
 
-> Using the [scikit-learn Tfidf Vectorizer](https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html), we use the inverse frequency matrix to determine importance of search words
+The script reads in data from the datasets and normalizes the data so the search engine is more efficient. 
+
+Using the [scikit-learn Tfidf Vectorizer](https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html), we use the inverse frequency matrix to determine importance of search words
 
 
 
