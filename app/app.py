@@ -1,9 +1,28 @@
 from flask import Flask, jsonify, request
-from data_processing import load_and_prepare, search_books, recommend_books
+from searchPy import load_and_prepare, search_books, recommend_books
+from flask_cors import CORS
+
 
 app = Flask(__name__)
-load_and_prepare()
+CORS(app)
 
+try:
+    print("Loading data...")
+    from searchPy import load_and_prepare
+
+    load_and_prepare(
+        book_path="goodreads_books.json.gz",
+        id_map_path="book_id_map.csv",
+        interactions_path="goodreads_interactions.csv"
+)    
+    print("Data loaded.")
+except Exception as e:
+    print("Failed to load data:", e)
+    
+@app.route("/debug/routes")
+def list_routes():
+    return jsonify([str(rule) for rule in app.url_map.iter_rules()])
+    
 @app.route("/api/search")
 def search_api():
     query = request.args.get("q", "")
@@ -25,4 +44,4 @@ def recommend_api():
     return jsonify(recommendations)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="127.0.0.1", port=5000, debug=True)

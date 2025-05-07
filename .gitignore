@@ -3,3 +3,6 @@
 *.csv.crdownload
 *.DS_Store
 *.json
+*.pkl
+
+*__pycache__

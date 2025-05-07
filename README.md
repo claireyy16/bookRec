@@ -1,6 +1,6 @@
 ## About
 
-Book recommendation search engine based off UCSD datasets from goodreads, using Python scripts in Jupyter Notebook, pandas, numpy, scikit-learn, vectorizers, etc.
+Book recommendation search engine based off [UCSD datasets](https://cseweb.ucsd.edu/~jmcauley/datasets/goodreads.html) from goodreads, using Python scripts in Jupyter Notebook, pandas, numpy, scikit-learn, vectorizers, etc.
 
 > Note: goodreads API has since been retired, these datasets are a couple years old
 
@@ -22,6 +22,29 @@ Easier to see in `recommendations.ipynb` and `search.ipynb` files
 
 ## Next Steps
 I'm hoping to get time to make a frontend for this after finals ends
+
+# Frontend Development
+I created an API using Flask and Flask CORS because I am planning to create a React webapp frontend. Testing it on Postman, I can use a few different API calls.
+I implemented an LRU cache since our dataset is so large so that Flask would not reread the entire csv file every time a change is made.
+
+```
+[
+  "/static/<path:filename>",
+  "/debug/routes",
+  "/api/search",
+  "/api/recommend"
+]```
+
+`GET https://127.0.0.1:5000/api/search?q=outliers`
+
+![search results](image-1.png)
+
+`POST http://127.0.0.1:5000/api/recommend `
+
+`{
+  "liked_books": ["39660", "883438"],
+  "top_n": 5
+}` 
 
 
 ## Data Sets Used:
