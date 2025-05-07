@@ -1,4 +1,4 @@
-##About
+## About
 
 Book recommendation search engine based off UCSD datasets from goodreads, using Python scripts in Jupyter Notebook, pandas, numpy, scikit-learn, vectorizers, etc.
 
@@ -10,13 +10,16 @@ The script reads in data from the datasets and normalizes the data so the search
 
 Using the [scikit-learn Tfidf Vectorizer](https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html), we use the inverse frequency matrix to determine importance of search words
 
-##Examples
+## Examples
+Easier to see in < recommendations.ipynb > and <search.ipynb> files
 
-Using search engine:
+#### Using search engine:
 
-Finding recommended books:
+#### Finding recommended books:
+![image](https://github.com/user-attachments/assets/ca6f5034-4283-4756-9f50-760a1045f7df)
 
-##Data Sets Used:
+
+## Data Sets Used:
 
 goodreads_interactions.csv: user_id, book_id, and rating for each book
 goodreads_books.json.gz: individual book metadata
