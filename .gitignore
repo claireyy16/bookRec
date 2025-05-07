@@ -1,0 +1,5 @@
+*.gz
+*.csv
+*.csv.crdownload
+.DS_Store
+*.json
