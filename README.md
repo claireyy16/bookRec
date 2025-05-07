@@ -11,7 +11,7 @@ The script reads in data from the datasets and normalizes the data so the search
 Using the [scikit-learn Tfidf Vectorizer](https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html), we use the inverse frequency matrix to determine importance of search words
 
 ## Examples
-Easier to see in 'recommendations.ipynb' and 'search.ipynb' files
+Easier to see in `recommendations.ipynb` and `search.ipynb` files
 
 #### Using search engine:
 ![image](https://github.com/user-attachments/assets/2d6a7b03-9b40-4e6d-a3ca-cde41789e200)
