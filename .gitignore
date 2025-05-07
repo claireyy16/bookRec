@@ -1,5 +1,5 @@
 *.gz
 *.csv
 *.csv.crdownload
-.DS_Store
+*.DS_Store
 *.json
