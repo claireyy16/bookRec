@@ -1,0 +1,125 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .title {
+    text-align: center;
+    color: #2463eb;
+    margin-bottom: 32px;
+    font-size: 28px;
+  }
+  
+  .layout {
+    display: flex;
+    gap: 30px;
+  }
+  
+  /* Left panel with introduction */
+  .intro-panel {
+    flex: 1;
+    background-color: #f9fafb;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .intro-panel h2 {
+    font-size: 20px;
+    margin-bottom: 16px;
+    color: #333;
+  }
+  
+  .intro-panel p {
+    margin-bottom: 12px;
+    line-height: 1.5;
+    color: #4b5563;
+  }
+  
+  /* Right panel with controls */
+  .controls-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .search-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .search-input {
+    padding: 10px 16px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 16px;
+    width: 100%;
+  }
+  
+  .button-group {
+    display: flex;
+    gap: 12px;
+  }
+  
+  .search-button, .reset-button, .toggle-button {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s;
+  }
+  
+  .search-button {
+    background-color: #2463eb;
+    color: white;
+    flex: 1;
+  }
+  
+  .search-button:hover {
+    background-color: #1d4ed8;
+  }
+  
+  .reset-button {
+    background-color: #e5e7eb;
+    color: #4b5563;
+    flex: 1;
+  }
+  
+  .reset-button:hover {
+    background-color: #d1d5db;
+  }
+  
+  .toggle-button {
+    background-color: #f3f4f6;
+    color: #4b5563;
+    border: 1px solid #d1d5db;
+  }
+  
+  .toggle-button:hover {
+    background-color: #e5e7eb;
+  }
+  
+  .advanced-options {
+    background-color: #f9fafb;
+    padding: 16px;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+  }
+  
+  .advanced-options h3 {
+    font-size: 18px;
+    margin-bottom: 12px;
+    color: #374151;
+  }
+  
+  /* Responsive design for mobile */
+  @media (max-width: 768px) {
+    .layout {
+      flex-direction: column;
+    }
+  }
